@@ -1,0 +1,38 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# DuckDB + ML
+data/
+*.duckdb
+*.duckdb.wal
+mlruns/
+mlflow.db
+ml/model.pkl
+
+# Environment
+.env
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# dbt
+dbt_wc/target/
+dbt_wc/logs/
+dbt_wc/dbt_packages/
+dbt_wc/package-lock.yml

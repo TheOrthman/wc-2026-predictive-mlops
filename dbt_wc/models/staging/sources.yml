@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+    - name: raw
+      schema: raw
+      tables:
+            - name: historical_matches
+              description: "World Cup matches 1930-2018 from Kaggle"
+            - name: live_matches
+              description: "2022 Qatar matches from API-Football"
+            - name: quarantine
+              description: "Failed API payloads for backfill"
+            - name: audit_log
+              description: "Pipeline run logs"
