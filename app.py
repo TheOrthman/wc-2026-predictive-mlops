@@ -3,6 +3,14 @@ import duckdb
 import pandas as pd
 import joblib
 import plotly.express as px
+import os
+import subprocess
+
+# Rebuild DB if missing - for Streamlit Cloud
+if not os.path.exists('data/wc.duckdb'):
+    os.makedirs('data', exist_ok=True)
+    subprocess.run(['python', 'ingest/load_historical.py'], check=True)
+    subprocess.run(['cd', 'dbt_wc', '&&', 'dbt', 'build'], shell=True, check=True)
 
 st.set_page_config(page_title="WC 2026 Predictor", layout="wide")
 
