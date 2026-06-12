@@ -5,6 +5,8 @@ import joblib
 import plotly.express as px
 import os
 import subprocess
+import duckdb
+con = duckdb.connect('data/warehouse.duckdb', read_only=True)
 from pathlib import Path
 
 st.set_page_config(page_title="WC 2026 Predictor", layout="wide")
@@ -14,7 +16,7 @@ DB_PATH = Path('data/wc.duckdb')
 if not DB_PATH.exists():
     with st.spinner('Building database on first run... This takes ~30s'):
         os.makedirs('data', exist_ok=True)
-        subprocess.run(['python', 'ingest/load_historical.py'], check=True)
+        #subprocess.run(['python', 'ingest/load_historical.py'], check=True)
         subprocess.run('cd dbt_wc && dbt build', shell=True, check=True)
     st.success('Database ready!')
     st.rerun()
