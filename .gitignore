@@ -10,8 +10,6 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # DuckDB + ML
-data/
-*.duckdb
 *.duckdb.wal
 mlruns/
 mlflow.db
